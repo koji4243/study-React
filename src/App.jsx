@@ -2,7 +2,7 @@ import './App.css'
 import { Header } from './components/Header';
 import { MainContent } from './components/MainContent';
 import { Footer } from './components/Footer';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 function App() {
@@ -11,6 +11,11 @@ function App() {
 
     // 進捗率をstateとして管理
     const [progress, setProgress] = useState(0); // 初期値は0％
+
+    // ブラウザ上部のタイトルを変更
+    useEffect(() => {
+        document.title = siteTitle;
+    }, []); // コンポーネントの初回描画時にのみ実行
 
     return (
         <>
